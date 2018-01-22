@@ -5,77 +5,34 @@ import {render} from 'react-dom';
 
 
 
-var shrinkHeaderMax = 100;
-var shrinkHeaderMin = 80;
 
-// $(document).ready(function() {
-// 	//$('.option').popover({ trigger: "hover" });
+var shrinkHeader = 80;
+$(window).scroll(toggleHeader);
 
 
-// 	$(window).scroll(function() {
-// 	    var scroll = getCurrentScroll();
-// 	   // var scroll = $(window).scrollTop();
-// 	    console.log('scroll ' + scroll);
-// 	     console.log('header-height  ' + $('.header').height());
-	    
-// 	    if ( scroll > shrinkHeaderMin) {
-// 	        $('.header').addClass('shrink');
-// 	        $('.removable-sec').css('visibility', 'hidden');
-// 	       // $('.removable-sec').fadeOut('slow');
-// 	       console.log('hide');
-
-//         }
-// 	    if ( scroll < shrinkHeaderMin -30) {
-// 	        $('.header').removeClass('shrink');
-// 	        $('.removable-sec').css('visibility', 'visible');
-// 	       //$('.removable-sec').fadeIn('slows');
-// 	        console.log('show');
-// 	    }
-	
-// 	});
-// 	///women/dresses_and_jumosuits, yellow, small
-// 	function getCurrentScroll() {
-//   	  return window.pageYOffset || document.documentElement.scrollTop;
-//     }
-
+function toggleHeader() { 
+	var scroll = getCurrentScroll() - $('.header').height();
  
- 
-
-// });
-
-$(document).ready(function() {
-	window.addEventListener('scroll', function(e) {
-	  var scroll = getCurrentScroll();
-	   // var scroll = $(window).scrollTop();
-	    console.log('scroll ' + scroll);
-	     console.log('header-height  ' + $('.header').height());
-	    
-	    if ( scroll > shrinkHeaderMin) {
-	        $('.header').addClass('shrink');
-	        $('.removable-sec').css('visibility', 'hidden');
-	       // $('.removable-sec').fadeOut('slow');
-	  
-	       console.log('hide');
-
-	    }
-	    else {
-	        $('.header').removeClass('shrink');
-	        $('.removable-sec').css('visibility', 'visible');
-	       //$('.removable-sec').fadeIn('slows');
-	        console.log('show');
-	    }
-
-	});
-
-	function getCurrentScroll() {
-  	  return window.pageYOffset || document.documentElement.scrollTop;
+    console.log('scroll ' + scroll);
+     console.log('header-height  ' + $('.header').height());
+    
+    if ( scroll > shrinkHeader) {
+        $('.header').addClass('shrink');
+        $('.removable-sec').css('visibility', 'hidden');
     }
+    else {
+        $('.header').removeClass('shrink');
+        $('.removable-sec').css('visibility', 'visible');
+    }
+}
 
-});
+function getCurrentScroll() {
+	return window.pageYOffset || document.documentElement.scrollTop;
+}
 
 
-
-
+ 
+ 
 
 
 class Header extends React.Component {
@@ -198,7 +155,7 @@ class App extends React.Component {
 			</div>
 
 		</nav>
-		<div className="large"></div>
+		<div className="large border"></div>
 		</div>
 	    	
     );
