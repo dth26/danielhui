@@ -1,0 +1,2 @@
+echo "compile sass files.."
+node-sass --include-path /Users/hui/Documents/apps/dan/src/style /Users/hui/Documents/apps/dan/src/style/base.scss /Users/hui/Documents/apps/dan/public/style/bundled.css
