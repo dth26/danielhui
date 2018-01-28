@@ -7,15 +7,11 @@
 	width: auto;
 }
 
-.body-container {
-	margin: 0px;
-	padding: 0px;
-	
+.body-container {	
 	top: 250px;
-	position: fixed;
-	overflow: scroll;
-	height: 2000px;
-	width: 800px;
+	position: relative;
+	//overflow: scroll;
+	
 
 	p {
 		font-size: 10px;

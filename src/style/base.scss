@@ -12,10 +12,10 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {  
-	.container {
-		padding-left: 100px;
-		padding-right: 100px;
-	}
+//	.container {
+//		padding-left: 100px;
+//		padding-right: 100px;
+//	}
 }
 
 
@@ -28,7 +28,7 @@
 
 html, body {
 	font-family: 'Roboto Slab',serif;
-	overflow: scroll;
+	//overflow: scroll;
 	height: 5000px;
 	width: auto;
 

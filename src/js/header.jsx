@@ -1,5 +1,14 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
+
+
+
 
 var shrinkHeader = 30;
 $(window).scroll(toggleHeader);
@@ -26,8 +35,10 @@ function getCurrentScroll() {
 
 
  $(document).ready(function () {
- 	var headerHeight = $('.header').height(); 
+ 	var headerHeight = $('#navbar-fixed-top-override').height(); 
  	$('.body-container ').css('top': headerHeight);
+
+ 	$('#navbar-fixed-top-override').width($('#bootstrap-override').width());
  });
  
 
@@ -92,24 +103,24 @@ export default class Header extends React.Component {
 					</div>	
 				</nav>  
 
-				<nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="body-navbar">
-				  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				    <span class="navbar-toggler-icon"></span>
+				<nav className="navbar navbar-toggleable-md navbar-light bg-faded" id="body-navbar">
+				  <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				    <span className="navbar-toggler-icon"></span>
 				  </button>
 			
-				  <div class="collapse navbar-collapse" id="navbarNav">
-				    <ul class="navbar-nav">
-				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				  <div className="collapse navbar-collapse" >
+				    <ul className="navbar-nav" id="body-navbar-ul">
+				      <li className="nav-item">
+				       		<Link to='/' className="nav-link">Projects</Link>
 				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Features</a>
+				      <li className="nav-item">
+				        	<Link to='/skills' className="nav-link">Skills</Link>
 				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Pricing</a>
+				      <li className="nav-item">
+				        <Link to='/resume' className="nav-link">Resume</Link>
 				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link disabled" href="#">Disabled</a>
+				      <li className="nav-item">
+				        <Link to='/about' className="nav-link">About</Link>
 				      </li>
 				    </ul>
 				  </div>
