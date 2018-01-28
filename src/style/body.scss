@@ -1,0 +1,23 @@
+
+
+.navbar-body {
+	background-color: white;
+	padding: 0px;
+	border-left: 1px solid black;
+	width: auto;
+}
+
+.body-container {
+	margin: 0px;
+	padding: 0px;
+	
+	top: 250px;
+	position: fixed;
+	overflow: scroll;
+	height: 2000px;
+	width: 800px;
+
+	p {
+		font-size: 10px;
+	}
+}

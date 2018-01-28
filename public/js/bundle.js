@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e2250d81a947d06031e6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6291dfc725a8be88da57"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -706,7 +706,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(24)(__webpack_require__.s = 24);
+/******/ 	return hotCreateRequire(26)(__webpack_require__.s = 26);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -946,6 +946,21 @@ module.exports = emptyFunction;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(28);
+} else {
+  module.exports = __webpack_require__(27);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -966,7 +981,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1063,22 +1078,53 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(26);
-} else {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
   module.exports = __webpack_require__(25);
+} else {
+  module.exports = __webpack_require__(24);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1138,7 +1184,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1207,7 +1253,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1288,7 +1334,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1327,7 +1373,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1342,7 +1388,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(20);
+var isTextNode = __webpack_require__(22);
 
 /*eslint-disable no-bitwise */
 
@@ -1370,7 +1416,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1400,7 +1446,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1442,7 +1488,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1513,7 +1559,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1527,9 +1573,9 @@ module.exports = shallowEqual;
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(5);
-  var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(21);
+  var invariant = __webpack_require__(6);
+  var warning = __webpack_require__(7);
+  var ReactPropTypesSecret = __webpack_require__(23);
   var loggedTypeFailures = {};
 }
 
@@ -1580,53 +1626,403 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(23);
-} else {
-  module.exports = __webpack_require__(22);
-}
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+$(document).ready(function () {
+	var headerWidth = $('.header').width();
+	console.log(headerWidth);
+	$('.body-container').css('width', headerWidth);
+	//$('.navbar-body').css('width', headerWidth);
+});
+
+var Body = function (_React$Component) {
+	_inherits(Body, _React$Component);
+
+	function Body() {
+		_classCallCheck(this, Body);
+
+		return _possibleConstructorReturn(this, (Body.__proto__ || Object.getPrototypeOf(Body)).apply(this, arguments));
+	}
+
+	_createClass(Body, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'container body-container  border' },
+				_react2.default.createElement(
+					'nav',
+					{ className: 'container navbar navbar-body  navbar-toggleable-md navbar-light bg-faded' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'container padding-none' },
+						_react2.default.createElement(
+							'button',
+							{ className: 'navbar-toggler navbar-toggler-right', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
+							_react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'collapse navbar-collapse', id: 'navbarNav' },
+							_react2.default.createElement(
+								'ul',
+								{ className: 'navbar-nav' },
+								_react2.default.createElement(
+									'li',
+									{ className: 'nav-item active' },
+									_react2.default.createElement(
+										'a',
+										{ className: 'nav-link', href: '#' },
+										'Home ',
+										_react2.default.createElement(
+											'span',
+											{ className: 'sr-only' },
+											'(current)'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									{ className: 'nav-item' },
+									_react2.default.createElement(
+										'a',
+										{ className: 'nav-link', href: '#' },
+										'Features'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									{ className: 'nav-item' },
+									_react2.default.createElement(
+										'a',
+										{ className: 'nav-link', href: '#' },
+										'Pricing'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									{ className: 'nav-item' },
+									_react2.default.createElement(
+										'a',
+										{ className: 'nav-link disabled', href: '#' },
+										'Disabled'
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris urna tellus, sodales quis lectus ut, tincidunt rutrum ligula. Duis non ipsum tortor. Curabitur rhoncus lobortis metus. Integer eu magna non nisl varius tincidunt eu quis arcu. Suspendisse bibendum dictum tortor, at commodo urna dignissim a. Nullam egestas, nisl et dignissim luctus, sapien tortor pellentesque augue, et congue nunc magna aliquet est. Sed euismod blandit tempor. In non nibh neque. Aliquam fermentum non felis quis elementum. Proin vitae pretium orci. Etiam congue efficitur augue, non efficitur ipsum molestie nec. Vestibulum eu turpis nisi. Vestibulum in augue eros. Mauris aliquet faucibus purus, vel malesuada risus mollis ut. Ut iaculis ipsum in tristique maximus. Fusce nec nisi urna. Proin eget arcu posuere, maximus diam sed, facilisis orci. Ut id ex feugiat, tempus magna eget, consequat libero. Nunc pulvinar ligula quis volutpat bibendum. Pellentesque nec ligula venenatis, ultricies elit in, porttitor metus. Vestibulum ligula enim, eleifend eget lacus in, vehicula congue felis. Duis cursus risus nisi, eget aliquet tortor laoreet at. Fusce at facilisis augue. Vestibulum massa mi, lobortis sed nisi sit amet, pretium suscipit mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis efficitur accumsan arcu quis eleifend. Mauris sodales tellus vitae orci euismod vestibulum. Sed tristique nisl gravida diam vestibulum, et cursus diam viverra. Donec finibus, erat eu auctor porttitor, ligula lectus rutrum arcu, nec accumsan purus turpis et orci. Donec elementum mollis nulla eu pulvinar. Maecenas rutrum, tortor vitae placerat faucibus, lorem nunc commodo nibh, nec varius nisl felis id velit. Proin vel commodo purus. Fusce volutpat quis eros in tristique. Maecenas ut eros risus. Donec viverra viverra lacus. Nulla viverra iaculis metus quis posuere. Nunc viverra venenatis lacus vel molestie. Phasellus vitae turpis mollis, vulputate augue ac, sagittis magna. Proin justo est, pretium in ex a, molestie suscipit massa. Sed nec magna sed lectus ullamcorper ullamcorper finibus in turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Vivamus erat dolor, vestibulum quis urna non, iaculis varius sem. Fusce tristique turpis sapien. Mauris imperdiet nisi sed faucibus aliquam. Cras luctus porttitor mi, sit amet molestie arcu faucibus vulputate. Phasellus scelerisque vel ante vel congue. In malesuada pretium sodales. Phasellus ut blandit neque. Aliquam erat volutpat. Nulla rutrum sit amet mi a fermentum. Vivamus lobortis, ligula id lacinia tempor, neque ante fringilla tellus, eu convallis libero lorem id odio. Pellentesque aliquam, diam id dapibus consectetur, lorem lacus porttitor purus, sed efficitur massa augue id mi. Sed eget ante nisl. Donec non lorem cursus, suscipit lorem eget, eleifend libero. Integer fermentum lacus at quam blandit, a eleifend purus hendrerit. Vestibulum vel vehicula lorem, eu mollis quam. Vivamus egestas orci vel tellus porttitor scelerisque. Nulla quis consectetur ex. Nullam tincidunt suscipit rhoncus. Vestibulum nec eros laoreet, maximus massa vitae, cursus nulla. Morbi blandit lectus viverra, euismod nunc quis, finibus est.'
+				)
+			);
+		}
+	}]);
+
+	return Body;
+}(_react2.default.Component);
+
+exports.default = Body;
+
+ ;(function register() { /* react-hot-loader/webpack */ if (process.env.NODE_ENV !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/Users/hui/Documents/apps/dan/src/js/body.jsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/Users/hui/Documents/apps/dan/src/js/body.jsx"); } } })();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var shrinkHeader = 30;
+$(window).scroll(toggleHeader);
+
+function toggleHeader() {
+	var scroll = getCurrentScroll() - $('.header').height();
+
+	if (scroll > shrinkHeader) {
+		$('.header').addClass('shrink');
+		$('.removable-sec').css('visibility', 'hidden');
+	} else {
+		$('.header').removeClass('shrink');
+		$('.removable-sec').css('visibility', 'visible');
+	}
+
+	$('.body-container').css('top', $('.header').height());
+}
+
+function getCurrentScroll() {
+	return window.pageYOffset || document.documentElement.scrollTop;
+}
+
+$(document).ready(function () {
+	var headerHeight = $('.header').height();
+	$('.body-container ').css('top');
+});
+
+var Header = function (_React$Component) {
+	_inherits(Header, _React$Component);
+
+	function Header() {
+		_classCallCheck(this, Header);
+
+		return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+	}
+
+	_createClass(Header, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'container fixed-top ', id: 'navbar-fixed-top-override' },
+				_react2.default.createElement(
+					'nav',
+					{ className: 'navbar header navbar-light bg-faded' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'container padding-zero' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'row row-eq-height' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-md-5 col-sm-12' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-12' },
+										_react2.default.createElement(
+											'p',
+											{ className: '' },
+											_react2.default.createElement(
+												'span',
+												{ id: 'title' },
+												'DANIEL HUI'
+											),
+											' \xA0 \xA0 \xA0',
+											_react2.default.createElement(
+												'span',
+												{ className: 'removable-sec' },
+												'Proin a erat nec augue pharetra fringilla. In hac habitasse platea dictumst. Vivamus augue nisi, accumsan non mollis a, interdum a velit.  Nulla tincidunt nisl nisi, porta consectetur nisi sodales u. Donec eget odio vel elit pretium convallis. Nullam mi quam, congue ullamcorper imperdiet eget, posuere nec velit. Nunc sed fermentum purus. Etiam sed ante nunc.In hac habitasse platea dictumst. Vivamus augue nisi.'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-12 bottom-bar removable-sec' },
+										_react2.default.createElement('i', { className: 'fa fa-location-arrow', 'aria-hidden': 'true' }),
+										_react2.default.createElement(
+											'span',
+											{ className: 'icon-caption' },
+											'Fairfax, VA'
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-md-3 col-sm-4 img-container' },
+								_react2.default.createElement('img', { className: 'img-cir  img-fluid center-content-v removable-sec', src: 'images/dan.gif', alt: 'picture of Daniel Hui' })
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-md-4 col-sm-8' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'row removable-sec' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-12' },
+										_react2.default.createElement(
+											'p',
+											null,
+											_react2.default.createElement(
+												'span',
+												{ className: 'heading-med' },
+												'Location'
+											),
+											_react2.default.createElement('br', null),
+											_react2.default.createElement(
+												'span',
+												{ className: 'desc-text' },
+												'Fairfax, VA'
+											)
+										),
+										'\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0',
+										_react2.default.createElement(
+											'p',
+											null,
+											_react2.default.createElement(
+												'span',
+												{ className: 'heading-med' },
+												'Age'
+											),
+											_react2.default.createElement('br', null),
+											_react2.default.createElement(
+												'span',
+												{ className: 'desc-text' },
+												'24'
+											)
+										),
+										_react2.default.createElement('br', null),
+										_react2.default.createElement(
+											'p',
+											null,
+											_react2.default.createElement(
+												'span',
+												{ className: 'heading-med' },
+												'Employer'
+											),
+											_react2.default.createElement('br', null),
+											_react2.default.createElement(
+												'span',
+												{ className: 'desc-text' },
+												'Booz Allen Hamilton, Software Engineer'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-12 bottom-bar' },
+										_react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' }),
+										_react2.default.createElement(
+											'span',
+											{ className: 'icon-caption' },
+											'danielhui123@gmail.com'
+										),
+										_react2.default.createElement('i', { className: 'down fa fa-phone', 'aria-hidden': 'true' }),
+										_react2.default.createElement(
+											'span',
+											{ className: 'icon-caption' },
+											'267-234-8911'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'nav',
+					{ 'class': 'navbar navbar-toggleable-md navbar-light bg-faded', id: 'body-navbar' },
+					_react2.default.createElement(
+						'button',
+						{ 'class': 'navbar-toggler navbar-toggler-right', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
+						_react2.default.createElement('span', { 'class': 'navbar-toggler-icon' })
+					),
+					_react2.default.createElement(
+						'div',
+						{ 'class': 'collapse navbar-collapse', id: 'navbarNav' },
+						_react2.default.createElement(
+							'ul',
+							{ 'class': 'navbar-nav' },
+							_react2.default.createElement(
+								'li',
+								{ 'class': 'nav-item active' },
+								_react2.default.createElement(
+									'a',
+									{ 'class': 'nav-link', href: '#' },
+									'Home ',
+									_react2.default.createElement(
+										'span',
+										{ 'class': 'sr-only' },
+										'(current)'
+									)
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ 'class': 'nav-item' },
+								_react2.default.createElement(
+									'a',
+									{ 'class': 'nav-link', href: '#' },
+									'Features'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ 'class': 'nav-item' },
+								_react2.default.createElement(
+									'a',
+									{ 'class': 'nav-link', href: '#' },
+									'Pricing'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ 'class': 'nav-item' },
+								_react2.default.createElement(
+									'a',
+									{ 'class': 'nav-link disabled', href: '#' },
+									'Disabled'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Header;
+}(_react2.default.Component);
+
+exports.default = Header;
+
+ ;(function register() { /* react-hot-loader/webpack */ if (process.env.NODE_ENV !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } /* eslint-disable camelcase, no-undef */ var webpackExports = typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__ : module.exports; /* eslint-enable camelcase, no-undef */ if (typeof webpackExports === 'function') { __REACT_HOT_LOADER__.register(webpackExports, 'module.exports', "/Users/hui/Documents/apps/dan/src/js/header.jsx"); return; } /* eslint-disable no-restricted-syntax */ for (var key in webpackExports) { /* eslint-enable no-restricted-syntax */ if (!Object.prototype.hasOwnProperty.call(webpackExports, key)) { continue; } var namedExport = void 0; try { namedExport = webpackExports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/Users/hui/Documents/apps/dan/src/js/header.jsx"); } } })();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1661,7 +2057,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1676,7 +2072,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(15);
+var camelize = __webpack_require__(17);
 
 var msPattern = /^-ms-/;
 
@@ -1704,7 +2100,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1740,7 +2136,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1755,7 +2151,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(17);
+var hyphenate = __webpack_require__(19);
 
 var msPattern = /^ms-/;
 
@@ -1782,7 +2178,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1810,7 +2206,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1825,7 +2221,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(19);
+var isNode = __webpack_require__(21);
 
 /**
  * @param {*} object The object to check.
@@ -1838,7 +2234,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1857,7 +2253,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1878,21 +2274,21 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(4);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
-var ExecutionEnvironment = __webpack_require__(8);
-var _assign = __webpack_require__(3);
+var React = __webpack_require__(2);
+var invariant = __webpack_require__(6);
+var warning = __webpack_require__(7);
+var ExecutionEnvironment = __webpack_require__(9);
+var _assign = __webpack_require__(4);
 var emptyFunction = __webpack_require__(1);
-var EventListener = __webpack_require__(7);
-var getActiveElement = __webpack_require__(11);
-var shallowEqual = __webpack_require__(12);
-var containsNode = __webpack_require__(9);
-var focusNode = __webpack_require__(10);
-var emptyObject = __webpack_require__(2);
-var checkPropTypes = __webpack_require__(13);
-var hyphenateStyleName = __webpack_require__(18);
-var camelizeStyleName = __webpack_require__(16);
+var EventListener = __webpack_require__(8);
+var getActiveElement = __webpack_require__(12);
+var shallowEqual = __webpack_require__(13);
+var containsNode = __webpack_require__(10);
+var focusNode = __webpack_require__(11);
+var emptyObject = __webpack_require__(3);
+var checkPropTypes = __webpack_require__(14);
+var hyphenateStyleName = __webpack_require__(20);
+var camelizeStyleName = __webpack_require__(18);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -17259,7 +17655,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17275,7 +17671,7 @@ module.exports = reactDom;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(4),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(1),ba=__webpack_require__(7),da=__webpack_require__(11),ea=__webpack_require__(12),fa=__webpack_require__(9),ia=__webpack_require__(10),D=__webpack_require__(2);
+var aa=__webpack_require__(2),l=__webpack_require__(9),B=__webpack_require__(4),C=__webpack_require__(1),ba=__webpack_require__(8),da=__webpack_require__(12),ea=__webpack_require__(13),fa=__webpack_require__(10),ia=__webpack_require__(11),D=__webpack_require__(3);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -17495,7 +17891,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17503,11 +17899,19 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(14);
+var _reactDom = __webpack_require__(5);
+
+var _header = __webpack_require__(16);
+
+var _header2 = _interopRequireDefault(_header);
+
+var _body = __webpack_require__(15);
+
+var _body2 = _interopRequireDefault(_body);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17517,331 +17921,28 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//import SearchBar from './search-bar.jsx'
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
 
+  function App() {
+    _classCallCheck(this, App);
 
-var shrinkHeader = 80;
-$(window).scroll(toggleHeader);
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
 
-function toggleHeader() {
-	var scroll = getCurrentScroll() - $('.header').height();
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'container', id: 'bootstrap-override' },
+        _react2.default.createElement(_header2.default, null),
+        _react2.default.createElement(_body2.default, null)
+      );
+    }
+  }]);
 
-	console.log('scroll ' + scroll);
-	console.log('header-height  ' + $('.header').height());
-
-	if (scroll > shrinkHeader) {
-		$('.header').addClass('shrink');
-		$('.removable-sec').css('visibility', 'hidden');
-	} else {
-		$('.header').removeClass('shrink');
-		$('.removable-sec').css('visibility', 'visible');
-	}
-}
-
-function getCurrentScroll() {
-	return window.pageYOffset || document.documentElement.scrollTop;
-}
-
-var Header = function (_React$Component) {
-	_inherits(Header, _React$Component);
-
-	function Header() {
-		_classCallCheck(this, Header);
-
-		return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-	}
-
-	_createClass(Header, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'header row border center-content-h  fixed-top row-eq-height' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'col-md-5 col-sm-12' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'row' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-12 removable-sec' },
-							_react2.default.createElement(
-								'p',
-								{ className: '' },
-								_react2.default.createElement(
-									'span',
-									{ id: 'title' },
-									'DANIEL HUI'
-								),
-								' \xA0 \xA0 \xA0 Proin a erat nec augue pharetra fringilla. In hac habitasse platea dictumst. Vivamus augue nisi, accumsan non mollis a, interdum a velit.  Nulla tincidunt nisl nisi, porta consectetur nisi sodales u. Donec eget odio vel elit pretium convallis. Nullam mi quam, congue ullamcorper imperdiet eget, posuere nec velit. Nunc sed fermentum purus. Etiam sed ante nunc.In hac habitasse platea dictumst. Vivamus augue nisi.'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'spacer' },
-							'\xA0'
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-12 bottom-bar' },
-							_react2.default.createElement('i', { className: 'fa fa-location-arrow', 'aria-hidden': 'true' }),
-							_react2.default.createElement(
-								'span',
-								{ className: 'icon-caption' },
-								'Fairfax, VA'
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'col-md-3 col-sm-4 img-container' },
-					_react2.default.createElement('img', { className: 'img-cir  removable-sec img-fluid center-content-v', src: 'images/dan.gif', alt: 'picture of Daniel Hui' })
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'col-md-4 col-sm-8' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'row' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-12 removable-sec' },
-							_react2.default.createElement(
-								'p',
-								null,
-								_react2.default.createElement(
-									'span',
-									{ className: 'heading-med' },
-									'Location'
-								),
-								_react2.default.createElement('br', null),
-								_react2.default.createElement(
-									'span',
-									{ className: 'desc-text' },
-									'Fairfax, VA'
-								)
-							),
-							'\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0',
-							_react2.default.createElement(
-								'p',
-								null,
-								_react2.default.createElement(
-									'span',
-									{ className: 'heading-med' },
-									'Age'
-								),
-								_react2.default.createElement('br', null),
-								_react2.default.createElement(
-									'span',
-									{ className: 'desc-text' },
-									'24'
-								)
-							),
-							_react2.default.createElement('br', null),
-							_react2.default.createElement(
-								'p',
-								null,
-								_react2.default.createElement(
-									'span',
-									{ className: 'heading-med' },
-									'Employer'
-								),
-								_react2.default.createElement('br', null),
-								_react2.default.createElement(
-									'span',
-									{ className: 'desc-text' },
-									'Booz Allen Hamilton, Software Engineer'
-								)
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'spacer' },
-							'\xA0'
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-12 bottom-bar' },
-							_react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' }),
-							_react2.default.createElement(
-								'span',
-								{ className: 'icon-caption' },
-								'danielhui123@gmail.com'
-							),
-							_react2.default.createElement('i', { className: 'down fa fa-phone', 'aria-hidden': 'true' }),
-							_react2.default.createElement(
-								'span',
-								{ className: 'icon-caption' },
-								'267-234-8911'
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return Header;
-}(_react2.default.Component);
-
-var App = function (_React$Component2) {
-	_inherits(App, _React$Component2);
-
-	function App() {
-		_classCallCheck(this, App);
-
-		return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	}
-
-	_createClass(App, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'nav',
-					{ className: 'header navbar sticky-top navbar-light bg-faded' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'row row-eq-height' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-md-5 col-sm-12' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'row' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'col-12' },
-									_react2.default.createElement(
-										'p',
-										{ className: '' },
-										_react2.default.createElement(
-											'span',
-											{ id: 'title' },
-											'DANIEL HUI'
-										),
-										' \xA0 \xA0 \xA0',
-										_react2.default.createElement(
-											'span',
-											{ className: 'removable-sec' },
-											'Proin a erat nec augue pharetra fringilla. In hac habitasse platea dictumst. Vivamus augue nisi, accumsan non mollis a, interdum a velit.  Nulla tincidunt nisl nisi, porta consectetur nisi sodales u. Donec eget odio vel elit pretium convallis. Nullam mi quam, congue ullamcorper imperdiet eget, posuere nec velit. Nunc sed fermentum purus. Etiam sed ante nunc.In hac habitasse platea dictumst. Vivamus augue nisi.'
-										)
-									)
-								),
-								_react2.default.createElement(
-									'div',
-									{ className: 'spacer' },
-									'\xA0'
-								),
-								_react2.default.createElement(
-									'div',
-									{ className: 'col-12 bottom-bar removable-sec' },
-									_react2.default.createElement('i', { className: 'fa fa-location-arrow', 'aria-hidden': 'true' }),
-									_react2.default.createElement(
-										'span',
-										{ className: 'icon-caption' },
-										'Fairfax, VA'
-									)
-								)
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-md-3 col-sm-4 img-container' },
-							_react2.default.createElement('img', { className: 'img-cir  img-fluid center-content-v removable-sec', src: 'images/dan.gif', alt: 'picture of Daniel Hui' })
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'col-md-4 col-sm-8' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'row' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'col-12 removable-sec' },
-									_react2.default.createElement(
-										'p',
-										null,
-										_react2.default.createElement(
-											'span',
-											{ className: 'heading-med' },
-											'Location'
-										),
-										_react2.default.createElement('br', null),
-										_react2.default.createElement(
-											'span',
-											{ className: 'desc-text' },
-											'Fairfax, VA'
-										)
-									),
-									'\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0',
-									_react2.default.createElement(
-										'p',
-										null,
-										_react2.default.createElement(
-											'span',
-											{ className: 'heading-med' },
-											'Age'
-										),
-										_react2.default.createElement('br', null),
-										_react2.default.createElement(
-											'span',
-											{ className: 'desc-text' },
-											'24'
-										)
-									),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement(
-										'p',
-										null,
-										_react2.default.createElement(
-											'span',
-											{ className: 'heading-med' },
-											'Employer'
-										),
-										_react2.default.createElement('br', null),
-										_react2.default.createElement(
-											'span',
-											{ className: 'desc-text' },
-											'Booz Allen Hamilton, Software Engineer'
-										)
-									)
-								),
-								_react2.default.createElement(
-									'div',
-									{ className: 'spacer' },
-									'\xA0'
-								),
-								_react2.default.createElement(
-									'div',
-									{ className: 'col-12 bottom-bar' },
-									_react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' }),
-									_react2.default.createElement(
-										'span',
-										{ className: 'icon-caption' },
-										'danielhui123@gmail.com'
-									),
-									_react2.default.createElement('i', { className: 'down fa fa-phone', 'aria-hidden': 'true' }),
-									_react2.default.createElement(
-										'span',
-										{ className: 'icon-caption' },
-										'267-234-8911'
-									)
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement('div', { className: 'large border' })
-			);
-		}
-	}]);
-
-	return App;
+  return App;
 }(_react2.default.Component);
 
 (0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('react-app'));
@@ -17850,7 +17951,7 @@ var App = function (_React$Component2) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17871,12 +17972,12 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(3);
-var emptyObject = __webpack_require__(2);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
+var _assign = __webpack_require__(4);
+var emptyObject = __webpack_require__(3);
+var invariant = __webpack_require__(6);
+var warning = __webpack_require__(7);
 var emptyFunction = __webpack_require__(1);
-var checkPropTypes = __webpack_require__(13);
+var checkPropTypes = __webpack_require__(14);
 
 // TODO: this is special because it gets imported during build.
 
@@ -19215,7 +19316,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19228,7 +19329,7 @@ module.exports = react;
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(3),n=__webpack_require__(2),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(4),n=__webpack_require__(3),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};

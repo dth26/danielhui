@@ -19,8 +19,23 @@
 }
 
 
+// IMPORTS
+@import 'header.scss';
+@import 'body.scss';
+
+
+
+
 html, body {
 	font-family: 'Roboto Slab',serif;
+	overflow: scroll;
+	height: 5000px;
+	width: auto;
+
+}
+
+#bootstrap-override .padding-zero {
+	padding: 0px;
 }
 
 h3 {
@@ -28,7 +43,13 @@ h3 {
 }
 
 .large {
-	height: 2000px}
+	
+	top: 350px;
+	position: absolute;
+	overflow: scroll;
+	height: 2000px;
+	width: 800px;
+	}
 
 .border{
 	border: 1px solid black;	
@@ -51,97 +72,30 @@ h3 {
   transform: translateY(-50%); 
 }
 
-
-.header {
-	border-bottom: 1px solid black; 
-	padding-bottom: 15px;
-	padding-top: 15px;
-	margin-bottom: 100px;
-	background-color: white;
-
-
-	.top {
-		margin-botton: 50px;
-	}
-	.bottom-bar {
-		  float: none;
-	   	position: absolute;
-	   	bottom: 0px;
-	
-	   	
-	}
-
-	.fa {
-		vertical-align: bottom;
-	}
-
-	#title {
-		font-size: 16px;
-		font-weight: 800;
-	}
-
-
-	.highlight {
-		color: #8c0827;
-	}
-
-	.icon-caption {
-		font-size: 11px;
-		color: #635f5f;
-		margin-left: 3px;
-		margin-right: 20px;
-	}
-
-	p{
-		margin-bottom: 8px;
-		font-size: 12px;
-		display: inline-block;
-		width: auto;
-	}
-
-	.desc-text {
-	    font-size: 12px;
-	}
-
-	.info-container {
-		width: auto;
-		display: inline-block;
-	}
-
-
-
-	.spacer {
-		width: 100%; 
-		height: 20px; 
-		float:left; 
-		display:inline-block;
-	}
-
-	.img-container{
-		margin-bottom: 20px;
-		float: right;
-	}
-
-	.img-cir { 
-	  height: 160px;
-	  width: auto;
-	  display: block;
-	  opacity: 0.9;
-	}
-
-
+.fixed-top{
+	top: initial;
+	left: initial;
+	right: initial;
 }
+
 
 .heading-med {
 	font-weight: 900; 	
 	font-size: 14px;
 }
 
-
-.shrink { 
-	height: 50px;
+.padding-none {
+	padding: 0px;
 }
 
-.removable-sec {
-	
+.spacer {
+	width: 100%; 
+	height: 3000px; 
+	float:left; 
+	display:inline-block;
+	top: 0px; 
+	left: 0x;
+	position: absolute;
 }
+
+

@@ -1,0 +1,11 @@
+webpackHotUpdate(0,{
+
+/***/ 27:
+/***/ (function(module, exports) {
+
+"use strict";
+throw new Error("Module build failed: SyntaxError: Unexpected token (41:59)\n\n\u001b[0m \u001b[90m 39 | \u001b[39m\t\t\t\t            aria\u001b[33m-\u001b[39mexpanded\u001b[33m=\u001b[39m\u001b[32m\"false\"\u001b[39m aria\u001b[33m-\u001b[39mlabel\u001b[33m=\u001b[39m\u001b[32m\"Toggle navigation\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mbutton\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 40 | \u001b[39m\t\t\t\t        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"collapse navbar-toggleable-md\"\u001b[39m id\u001b[33m=\u001b[39m\u001b[32m\"navbarResponsive\"\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 41 | \u001b[39m\t\t\t\t            \u001b[33m<\u001b[39m\u001b[33ma\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"navbar-brand\"\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m\"#\"\u001b[39m \u001b[33mNavbar\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    | \u001b[39m\t\t\t\t                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 42 | \u001b[39m\t\t\t\t            \u001b[33m<\u001b[39m\u001b[33mul\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"nav navbar-nav float-md-right\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 43 | \u001b[39m\t\t\t\t                \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"nav-item active\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 44 | \u001b[39m\t\t\t\t                    \u001b[33m<\u001b[39m\u001b[33ma\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"nav-link\"\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m\"#\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mHome\u001b[39m \u001b[33m<\u001b[39m\u001b[33mspan\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"sr-only\"\u001b[39m\u001b[33m>\u001b[39m(current)\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mspan\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
+
+/***/ })
+
+})
