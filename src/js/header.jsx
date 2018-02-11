@@ -50,11 +50,12 @@ export default class Header extends React.Component {
 			    <nav className="navbar header navbar-light bg-faded">
 			    	<div className="container padding-zero">
 					  	<div className="row row-eq-height">
-							<div className="col-md-5 col-sm-12">
+							<div className="col-md-6 col-sm-12">
 								<div className="row">
 									<div className="col-12">
 										<p className="">
-											<span id="title">DANIEL HUI</span> &nbsp; &nbsp; &nbsp;<span className="removable-sec">
+											<span id="title">DANIEL HUI</span> <br/><br/>
+											<span className="removable-sec">
 											Proin a erat nec augue pharetra fringilla. In hac habitasse platea dictumst. Vivamus augue nisi,
 													 accumsan non mollis a, interdum a velit.  Nulla tincidunt nisl nisi, porta consectetur nisi sodales
 													  u. Donec eget odio vel elit pretium convallis. Nullam mi quam,
@@ -69,9 +70,6 @@ export default class Header extends React.Component {
 										<span className="icon-caption">Fairfax, VA</span>
 									</div>
 								</div>
-							</div>
-							<div className="col-md-3 col-sm-4 img-container">
-								<img className="img-cir  img-fluid center-content-v removable-sec" src="images/dan.gif" alt="picture of Daniel Hui"/>
 							</div>
 							<div className="col-md-4 col-sm-8">
 								<div className="row removable-sec">
@@ -97,6 +95,9 @@ export default class Header extends React.Component {
 									</div>
 								</div>
 							</div>
+							<div className="col-md-2 col-sm-4 img-container">
+								<img className="img-cir  img-fluid removable-sec" src="images/dan-square.png" alt="picture of Daniel Hui"/>
+							</div>
 
 						</div>
 
@@ -104,14 +105,15 @@ export default class Header extends React.Component {
 				</nav>  
 
 				<nav className="navbar navbar-toggleable-md navbar-light bg-faded" id="body-navbar">
-				  <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#body-navbar-ul" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				    <span className="navbar-toggler-icon"></span>
 				  </button>
+			
 			
 				  <div className="collapse navbar-collapse" >
 				    <ul className="navbar-nav" id="body-navbar-ul">
 				      <li className="nav-item">
-				       		<Link to='/' className="nav-link">Projects</Link>
+				       		<Link to='/projects' className="nav-link">Projects</Link>
 				      </li>
 				      <li className="nav-item">
 				        	<Link to='/skills' className="nav-link">Skills</Link>
@@ -124,6 +126,8 @@ export default class Header extends React.Component {
 				      </li>
 				    </ul>
 				  </div>
+
+				
 				</nav>
 				
 			</div>

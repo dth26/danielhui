@@ -9,7 +9,7 @@
     "sass": "node-sass  --output-style compressed src/style/base.scss > public/style/bundled.css",
     "build-css": "./bin/build-css",
     "watch-css": "./bin/watch-css",
-    "start": "webpack-dev-server --inline --hot"
+    "start": "webpack-dev-server --inline"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Project} from './project.jsx';
+import Project from './project.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -18,11 +18,13 @@ import {
  });
  
 
+        
 
 export default class Body extends React.Component {
 
 	render () {
 		return (
+
 			<div className="container-fluid body-container">
 				<Route exact path="/" component={Project}/>
 				<Route path="/projects" component={Project}/>

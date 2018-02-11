@@ -43,7 +43,8 @@
     display: inline-block; }
   .header .img-container {
     margin-bottom: 20px;
-    float: right; }
+    float: right;
+    padding: 0px; }
   .header .img-cir {
     height: 160px;
     width: auto;
@@ -70,10 +71,12 @@
   width: auto; }
 
 .body-container {
-  top: 250px;
   position: relative; }
   .body-container p {
     font-size: 10px; }
+
+.project-card {
+  width: 30em; }
 
 html, body {
   font-family: 'Roboto Slab',serif;

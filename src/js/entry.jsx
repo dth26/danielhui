@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import Project from './project.jsx';
 
 
 
@@ -15,11 +16,12 @@ import {
 class App extends React.Component {
   render () {
     return (
+
         <Router>
-        	<div className="container" id="bootstrap-override"> 
-            	<Header/>
+            <div className="container" id="bootstrap-override"> 
+                <Header/>
                 <Body/>
-    		</div>
+            </div>
         </Router>
 	    	
     );
