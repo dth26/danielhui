@@ -7,45 +7,45 @@
   padding-bottom: 30px;
   background-color: white; }
 
-.header {
+#header {
   border-bottom: 1px solid black;
   padding-bottom: 15px;
   padding-top: 15px;
   background-color: white;
   clear: both; }
-  .header .top {
+  #header .top {
     margin-botton: 50px; }
-  .header .bottom-bar {
+  #header .bottom-bar {
     float: none;
     position: absolute;
     bottom: 0px; }
-  .header .fa {
+  #header .fa {
     vertical-align: bottom; }
-  .header #title {
+  #header #title {
     font-size: 16px;
     font-weight: 800; }
-  .header .highlight {
+  #header .highlight {
     color: #8c0827; }
-  .header .icon-caption {
+  #header .icon-caption {
     font-size: 11px;
     color: #635f5f;
     margin-left: 3px;
     margin-right: 20px; }
-  .header p {
+  #header p {
     margin-bottom: 8px;
     font-size: 12px;
     display: inline-block;
     width: auto; }
-  .header .desc-text {
+  #header .desc-text {
     font-size: 12px; }
-  .header .info-container {
+  #header .info-container {
     width: auto;
     display: inline-block; }
-  .header .img-container {
+  #header .img-container {
     margin-bottom: 20px;
     float: right;
     padding: 0px; }
-  .header .img-cir {
+  #header .img-cir {
     height: 160px;
     width: auto;
     display: block;
@@ -71,16 +71,15 @@
   width: auto; }
 
 .body-container {
-  position: relative; }
+  position: absolute; }
   .body-container p {
     font-size: 10px; }
 
 .project-card {
-  width: 30em; }
+  width: 15em; }
 
 html, body {
   font-family: 'Roboto Slab',serif;
-  height: 5000px;
   width: auto; }
 
 #bootstrap-override .padding-zero {
@@ -90,11 +89,8 @@ h3 {
   margin: 0px; }
 
 .large {
-  top: 350px;
   position: absolute;
-  overflow: scroll;
-  height: 2000px;
-  width: 800px; }
+  height: 3000px; }
 
 .border {
   border: 1px solid black; }

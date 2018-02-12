@@ -10,24 +10,6 @@ import {
 
 
 
-var shrinkHeader = 30;
-$(window).scroll(toggleHeader);
-
-
-function toggleHeader() { 
-	var scroll = getCurrentScroll() - $('.header').height();
-   
-    if ( scroll > shrinkHeader) {
-        $('.header').addClass('shrink');
-        $('.removable-sec').css('visibility', 'hidden');
-    }
-    else {
-        $('.header').removeClass('shrink');
-        $('.removable-sec').css('visibility', 'visible');
-    }
-
-    $('.body-container').css('top', $('.header').height());
-}
 
 function getCurrentScroll() {
 	return window.pageYOffset || document.documentElement.scrollTop;
@@ -36,18 +18,64 @@ function getCurrentScroll() {
 
  $(document).ready(function () {
  	var headerHeight = $('#navbar-fixed-top-override').height(); 
- 	$('.body-container ').css('top': headerHeight);
+ 	$('.body-container').css('top', headerHeight + headerHeightPadding);
 
- 	$('#navbar-fixed-top-override').width($('#bootstrap-override').width());
+ 	var shrinkHeader = 30;
+	var headerHeightPadding = 10;
+
+ 	var delay = 200;
+	var timeout = null;
+
+
+	// start of scrolling
+	$(window).scroll(function() {
+
+		var scroll = getCurrentScroll() - $('#header').height();
+	   
+	    if ( scroll > shrinkHeader) {
+	    	// shrink header
+	        $('#header').addClass('shrink');
+	        $('.removable-sec').css('visibility', 'hidden');
+
+	        // fade header on scroll
+	        $('#navbar-fixed-top-override').fadeOut(400);
+	    }
+	    else {
+	    	// grow header
+	        $('#header').removeClass('shrink');
+	        $('.removable-sec').css('visibility', 'visible');
+	    }
+
+	    $('.body-container').css('top', $('#header').height());
+		  
+	});
+
+
+
+ 	// wait for scrolling to stop and show header
+	$(window).scroll(function() {
+		clearTimeout(timeout);
+	    timeout = setTimeout(function(){
+	         $('#navbar-fixed-top-override').fadeIn(400);
+	    },delay);
+	});
+
+
  });
  
+
+
+
+
+
+
 
 
 export default class Header extends React.Component {
 	render () {
 		return  (	
 			<div className="container fixed-top " id="navbar-fixed-top-override">		
-			    <nav className="navbar header navbar-light bg-faded">
+			    <nav className="navbar navbar-light bg-faded" id="header">
 			    	<div className="container padding-zero">
 					  	<div className="row row-eq-height">
 							<div className="col-md-6 col-sm-12">
