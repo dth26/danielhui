@@ -17,11 +17,11 @@ function getCurrentScroll() {
 
 
  $(document).ready(function () {
- 	var headerHeight = $('#navbar-fixed-top-override').height(); 
- 	$('.body-container').css('top', headerHeight + headerHeightPadding);
+ 	var headerHeightPadding = 30;
+ 	$('.body-container').css('top', $('#navbar-fixed-top-override').height() + headerHeightPadding );
 
- 	var shrinkHeader = 30;
-	var headerHeightPadding = 10;
+ 	var shrinkHeader = 50;
+	
 
  	var delay = 200;
 	var timeout = null;
@@ -46,7 +46,7 @@ function getCurrentScroll() {
 	        $('.removable-sec').css('visibility', 'visible');
 	    }
 
-	    $('.body-container').css('top', $('#header').height());
+	    $('.body-container').css('top', $('#navbar-fixed-top-override').height() + headerHeightPadding );
 		  
 	});
 

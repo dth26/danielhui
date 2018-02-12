@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3a80c8b51f5ec1ffa707"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e00882afc0062eacad07"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -3693,11 +3693,10 @@ function getCurrentScroll() {
 }
 
 $(document).ready(function () {
-	var headerHeight = $('#navbar-fixed-top-override').height();
-	$('.body-container').css('top', headerHeight + headerHeightPadding);
+	var headerHeightPadding = 30;
+	$('.body-container').css('top', $('#navbar-fixed-top-override').height() + headerHeightPadding);
 
-	var shrinkHeader = 30;
-	var headerHeightPadding = 10;
+	var shrinkHeader = 50;
 
 	var delay = 200;
 	var timeout = null;
@@ -3720,7 +3719,7 @@ $(document).ready(function () {
 			$('.removable-sec').css('visibility', 'visible');
 		}
 
-		$('.body-container').css('top', $('#header').height());
+		$('.body-container').css('top', $('#navbar-fixed-top-override').height() + headerHeightPadding);
 	});
 
 	// wait for scrolling to stop and show header
