@@ -1,5 +1,66 @@
 
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {  }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  
+//	.container {
+//		padding-left: 100px;
+//		padding-right: 100px;
+//	}
+}
+
+
 
 .project-card {
-	width: 15em;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+	}
+
+	.card-block {
+		padding: 5px;
+
+		.fa {
+//			font-size: 2em;
+			color: black;
+		}
+
+		.fa-text {
+			color: #0a3a82;
+		}
+
+	}
+
+	.card-link {
+		font-size: 11px;
+	}
+
+	.tag {
+		display: inline-block;
+		padding: 4px 3px;
+		background-color: white;
+		color: black;
+		border-width: 1px 1px 2px 1px;
+		border-style: solid;
+		border-color: #222;
+		border-color: #1c1c1c;
+		border-radius: 3px;
+		margin: 3px;
+		margin-left: 6px;
+		opacity: 1;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden; }
+
 }

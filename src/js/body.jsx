@@ -25,7 +25,7 @@ export default class Body extends React.Component {
 	render () {
 		return (
 
-			<div className="container-fluid body-container border">
+			<div className="container-fluid body-container">
 				<Route exact path="/" component={Project}/>
 				<Route path="/projects" component={Project}/>
 				<Route path="/about" component={Project}/>

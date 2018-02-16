@@ -70,12 +70,39 @@
   width: auto; }
 
 .body-container {
+  padding-top: 100px;
   position: absolute; }
   .body-container p {
     font-size: 10px; }
 
 .project-card {
-  width: 15em; }
+  overflow: hidden; }
+  .project-card img {
+    width: 100%; }
+  .project-card .card-block {
+    padding: 5px; }
+    .project-card .card-block .fa {
+      color: black; }
+    .project-card .card-block .fa-text {
+      color: #0a3a82; }
+  .project-card .card-link {
+    font-size: 11px; }
+  .project-card .tag {
+    display: inline-block;
+    padding: 4px 3px;
+    background-color: white;
+    color: black;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: #222;
+    border-color: #1c1c1c;
+    border-radius: 3px;
+    margin: 3px;
+    margin-left: 6px;
+    opacity: 1;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; }
 
 html, body {
   font-family: 'Roboto Slab',serif;

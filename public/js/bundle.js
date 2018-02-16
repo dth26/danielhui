@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e00882afc0062eacad07"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "00835032facc4ac5989b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -2259,6 +2259,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(10);
 
+var _projectsData = __webpack_require__(80);
+
+var _projectsData2 = _interopRequireDefault(_projectsData);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2267,8 +2271,77 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Project = function (_React$Component) {
-	_inherits(Project, _React$Component);
+var Card = function (_React$Component) {
+	_inherits(Card, _React$Component);
+
+	function Card() {
+		_classCallCheck(this, Card);
+
+		return _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).apply(this, arguments));
+	}
+
+	_createClass(Card, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'col-xs-1 col-sm-1 col-md-2 col-lg-3' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'card project-card' },
+					_react2.default.createElement('img', { className: 'card-img-top', src: "public/images/site-screenshots/" + this.props.image, alt: 'Card image cap' }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'card-block' },
+						_react2.default.createElement(
+							'h6',
+							{ className: 'card-title' },
+							this.props.projectName
+						),
+						_react2.default.createElement(
+							'p',
+							{ className: 'card-text' },
+							this.props.projectDesc
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'card-block' },
+						_react2.default.createElement(
+							'p',
+							null,
+							this.props.projectTools.map(function (tag) {
+								return _react2.default.createElement(
+									'span',
+									{ key: _.uniqueId(), className: 'tag' },
+									tag
+								);
+							})
+						),
+						_react2.default.createElement(
+							'a',
+							{ href: this.props.github, className: 'card-link' },
+							_react2.default.createElement(
+								'i',
+								{ 'class': 'fa fa-github fa-lg' },
+								_react2.default.createElement(
+									'span',
+									{ className: 'fa-text' },
+									'\xA0Source'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Card;
+}(_react2.default.Component);
+
+var Project = function (_React$Component2) {
+	_inherits(Project, _React$Component2);
 
 	function Project() {
 		_classCallCheck(this, Project);
@@ -2281,474 +2354,13 @@ var Project = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ className: 'container' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'h4',
-							{ className: 'card-title' },
-							'Card title'
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
-						)
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'list-group list-group-flush' },
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Cras justo odio'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Dapibus ac facilisis in'
-						),
-						_react2.default.createElement(
-							'li',
-							{ className: 'list-group-item' },
-							'Vestibulum at eros'
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Card link'
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'card-link' },
-							'Another link'
-						)
-					)
+					{ className: 'row' },
+					_projectsData2.default.map(function (dict) {
+						return _react2.default.createElement(Card, { key: _.uniqueId(), image: dict['image'], projectName: dict['name'], projectDesc: dict['desc'], projectTools: dict['tools'], github: dict['github'] });
+					})
 				)
 			);
 		}
@@ -3641,7 +3253,7 @@ var Body = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container-fluid body-container border' },
+        { className: 'container-fluid body-container' },
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _project2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/projects', component: _project2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _project2.default }),
@@ -3693,7 +3305,7 @@ function getCurrentScroll() {
 }
 
 $(document).ready(function () {
-	var headerHeightPadding = 30;
+	var headerHeightPadding = 0;
 	$('.body-container').css('top', $('#navbar-fixed-top-override').height() + headerHeightPadding);
 
 	var shrinkHeader = 50;
@@ -24900,6 +24512,14 @@ var U={Children:{map:function(a,b,e){if(null==a)return a;var c=[];T(a,c,null,b,e
 d=a.key,g=a.ref,k=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,k=G.current);void 0!==b.key&&(d=""+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(h in b)H.call(b,h)&&!I.hasOwnProperty(h)&&(c[h]=void 0===b[h]&&void 0!==f?f[h]:b[h])}var h=arguments.length-2;if(1===h)c.children=e;else if(1<h){f=Array(h);for(var l=0;l<h;l++)f[l]=arguments[l+2];c.children=f}return{$$typeof:r,type:a.type,key:d,ref:g,props:c,_owner:k}},createFactory:function(a){var b=J.bind(null,a);b.type=a;return b},
 isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:G,assign:m}},V=Object.freeze({default:U}),W=V&&U||V;module.exports=W["default"]?W["default"]:W;
 
+
+/***/ }),
+/* 78 */,
+/* 79 */,
+/* 80 */
+/***/ (function(module, exports) {
+
+module.exports = [{"name":"OptimalVibes","github":"https://github.com/dth26/OptimalVibes.git","desc":"Audio track ripper and downloader","tools":["Python","ReactJS","Webpack","Bootstrap"],"image":"OptimalVibes1.png"},{"name":"Personal Website","github":"https://github.com/dth26/OptimalVibes.git","desc":"I built a customized personal website for a friend","tools":["Python","Flask"],"image":"optimalVibes1"},{"name":"Personal Website","github":"https://github.com/dth26/OptimalVibes.git","desc":"I built a customized personal website for a friend","tools":["Python","Flask"],"image":"optimalVibes1"}]
 
 /***/ })
 /******/ ]);

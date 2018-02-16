@@ -17,7 +17,7 @@ function getCurrentScroll() {
 
 
  $(document).ready(function () {
- 	var headerHeightPadding = 30;
+ 	var headerHeightPadding = 0;
  	$('.body-container').css('top', $('#navbar-fixed-top-override').height() + headerHeightPadding );
 
  	var shrinkHeader = 50;

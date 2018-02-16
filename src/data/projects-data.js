@@ -1,0 +1,28 @@
+
+
+
+let projects_json = [
+	{
+		'name': 'OptimalVibes',
+		'github' : 'https://github.com/dth26/OptimalVibes.git',
+		'desc' : 'Audio track ripper and downloader',
+		'tools' : 'Python ReactJS Webpack Bootstrap',
+		'image' : 'optimalVibes1'
+	},
+	{
+		'name': 'Personal Website',
+		'github' : 'https://github.com/dth26/OptimalVibes.git',
+		'desc' : 'I built a customized personal website for a friend',
+		'tools' : 'Python Flask',
+		'image' : 'optimalVibes1'
+	},
+	{
+		'name': 'Personal Website',
+		'github' : 'https://github.com/dth26/OptimalVibes.git',
+		'desc' : 'I built a customized personal website for a friend',
+		'tools' : 'Python Flask',
+		'image' : 'optimalVibes1'
+	}
+];
+
+export projects_json;
