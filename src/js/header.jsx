@@ -124,7 +124,7 @@ export default class Header extends React.Component {
 								</div>
 							</div>
 							<div className="col-md-2 col-sm-4 img-container">
-								<img className="img-cir  img-fluid removable-sec" src="images/dan-square.png" alt="picture of Daniel Hui"/>
+								<img className="img-cir center-content-v removable-sec" src="images/dan-square.png" alt="picture of Daniel Hui"/>
 							</div>
 
 						</div>

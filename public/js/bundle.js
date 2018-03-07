@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "00835032facc4ac5989b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1cfc8b63dffc6a9c7670"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1418,52 +1418,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(56);
-} else {
-  module.exports = __webpack_require__(55);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1484,7 +1438,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1553,7 +1507,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1627,6 +1581,52 @@ var createLocation = function createLocation(path, state, key, currentLocation) 
 var locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_value_equal__["default"])(a.state, b.state);
 };
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(56);
+} else {
+  module.exports = __webpack_require__(55);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 14 */
@@ -1963,7 +1963,7 @@ var createTransitionManager = function createTransitionManager() {
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(6);
-  var warning = __webpack_require__(12);
+  var warning = __webpack_require__(11);
   var ReactPropTypesSecret = __webpack_require__(19);
   var loggedTypeFailures = {};
 }
@@ -2257,9 +2257,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(13);
 
-var _projectsData = __webpack_require__(80);
+var _projectsData = __webpack_require__(78);
 
 var _projectsData2 = _interopRequireDefault(_projectsData);
 
@@ -2281,53 +2281,85 @@ var Card = function (_React$Component) {
 	}
 
 	_createClass(Card, [{
+		key: 'loadModal',
+		value: function loadModal(modalID) {
+			console.log('clicked');
+			$("#" + modalID).modal("show");
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'col-xs-1 col-sm-1 col-md-2 col-lg-3' },
 				_react2.default.createElement(
-					'div',
-					{ className: 'card project-card' },
-					_react2.default.createElement('img', { className: 'card-img-top', src: "public/images/site-screenshots/" + this.props.image, alt: 'Card image cap' }),
+					'button',
+					{ type: 'button', className: 'btn-project-modal', 'data-toggle': 'modal', 'data-target': "#" + this.props.modalID },
 					_react2.default.createElement(
 						'div',
-						{ className: 'card-block' },
+						{ className: 'card project-card' },
+						_react2.default.createElement('img', { className: 'card-img-top', src: "public/images/site-screenshots/" + this.props.image, alt: 'Card image cap' }),
 						_react2.default.createElement(
-							'h6',
-							{ className: 'card-title' },
-							this.props.projectName
-						),
-						_react2.default.createElement(
-							'p',
-							{ className: 'card-text' },
-							this.props.projectDesc
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'card-block' },
-						_react2.default.createElement(
-							'p',
-							null,
-							this.props.projectTools.map(function (tag) {
-								return _react2.default.createElement(
-									'span',
-									{ key: _.uniqueId(), className: 'tag' },
-									tag
-								);
-							})
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: this.props.github, className: 'card-link' },
+							'div',
+							{ className: 'card-block' },
 							_react2.default.createElement(
-								'i',
-								{ 'class': 'fa fa-github fa-lg' },
+								'h6',
+								{ className: 'card-title card-header' },
+								this.props.projectName
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'card-block card-block-text' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'card-text' },
+								this.props.projectDesc
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								this.props.projectTools.map(function (tag) {
+									return _react2.default.createElement(
+										'span',
+										{ key: _.uniqueId(), className: 'tag' },
+										tag
+									);
+								})
+							),
+							_react2.default.createElement(
+								'a',
+								{ target: '_blank', href: this.props.github, className: 'card-link' },
 								_react2.default.createElement(
-									'span',
-									{ className: 'fa-text' },
-									'\xA0Source'
+									'i',
+									{ className: 'fa fa-github fa-lg' },
+									_react2.default.createElement(
+										'span',
+										{ className: 'fa-text' },
+										'\xA0Source'
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'modal fade', id: this.props.modalID, tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'modal-dialog  modal-lg', role: 'document' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'modal-content' },
+							_react2.default.createElement('img', { className: 'modal-img', src: "public/images/site-screenshots/" + this.props.image, alt: 'Card image cap' }),
+							_react2.default.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								_react2.default.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-secondary', 'data-dismiss': 'modal' },
+									'Close'
 								)
 							)
 						)
@@ -2359,7 +2391,7 @@ var Project = function (_React$Component2) {
 					'div',
 					{ className: 'row' },
 					_projectsData2.default.map(function (dict) {
-						return _react2.default.createElement(Card, { key: _.uniqueId(), image: dict['image'], projectName: dict['name'], projectDesc: dict['desc'], projectTools: dict['tools'], github: dict['github'] });
+						return _react2.default.createElement(Card, { key: _.uniqueId(), image: dict['image'], modalID: dict['modalID'], projectName: dict['name'], projectDesc: dict['desc'], projectTools: dict['tools'], github: dict['github'] });
 					})
 				)
 			);
@@ -3216,7 +3248,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(13);
 
 var _project = __webpack_require__(23);
 
@@ -3288,7 +3320,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(13);
 
 var _reactRouterDom = __webpack_require__(14);
 
@@ -3484,7 +3516,7 @@ var Header = function (_React$Component) {
 							_react2.default.createElement(
 								'div',
 								{ className: 'col-md-2 col-sm-4 img-container' },
-								_react2.default.createElement('img', { className: 'img-cir  img-fluid removable-sec', src: 'images/dan-square.png', alt: 'picture of Daniel Hui' })
+								_react2.default.createElement('img', { className: 'img-cir center-content-v removable-sec', src: 'images/dan-square.png', alt: 'picture of Daniel Hui' })
 							)
 						)
 					)
@@ -4594,7 +4626,7 @@ exports.default = createMemoryHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(31);
@@ -4898,7 +4930,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(31);
@@ -5218,7 +5250,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(17);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -5389,7 +5421,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* unused harmony reexport createHashHistory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(50);
 /* unused harmony reexport createMemoryHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(12);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(8);
@@ -5558,7 +5590,7 @@ module.exports = function() {
 
 var emptyFunction = __webpack_require__(5);
 var invariant = __webpack_require__(6);
-var warning = __webpack_require__(12);
+var warning = __webpack_require__(11);
 var assign = __webpack_require__(9);
 
 var ReactPropTypesSecret = __webpack_require__(19);
@@ -6116,7 +6148,7 @@ if (process.env.NODE_ENV !== "production") {
 
 var React = __webpack_require__(0);
 var invariant = __webpack_require__(6);
-var warning = __webpack_require__(12);
+var warning = __webpack_require__(11);
 var ExecutionEnvironment = __webpack_require__(25);
 var _assign = __webpack_require__(9);
 var emptyFunction = __webpack_require__(5);
@@ -6125,7 +6157,7 @@ var getActiveElement = __webpack_require__(28);
 var shallowEqual = __webpack_require__(29);
 var containsNode = __webpack_require__(26);
 var focusNode = __webpack_require__(27);
-var emptyObject = __webpack_require__(11);
+var emptyObject = __webpack_require__(10);
 var checkPropTypes = __webpack_require__(18);
 var hyphenateStyleName = __webpack_require__(42);
 var camelizeStyleName = __webpack_require__(40);
@@ -21511,7 +21543,7 @@ module.exports = reactDom;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),l=__webpack_require__(25),B=__webpack_require__(9),C=__webpack_require__(5),ba=__webpack_require__(24),da=__webpack_require__(28),ea=__webpack_require__(29),fa=__webpack_require__(26),ia=__webpack_require__(27),D=__webpack_require__(11);
+var aa=__webpack_require__(0),l=__webpack_require__(25),B=__webpack_require__(9),C=__webpack_require__(5),ba=__webpack_require__(24),da=__webpack_require__(28),ea=__webpack_require__(29),fa=__webpack_require__(26),ia=__webpack_require__(27),D=__webpack_require__(10);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -21743,7 +21775,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(10);
+var _reactDom = __webpack_require__(13);
 
 var _header = __webpack_require__(38);
 
@@ -23143,9 +23175,9 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var _assign = __webpack_require__(9);
-var emptyObject = __webpack_require__(11);
+var emptyObject = __webpack_require__(10);
 var invariant = __webpack_require__(6);
-var warning = __webpack_require__(12);
+var warning = __webpack_require__(11);
 var emptyFunction = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(18);
 
@@ -24499,7 +24531,7 @@ module.exports = react;
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(9),n=__webpack_require__(11),p=__webpack_require__(5),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(9),n=__webpack_require__(10),p=__webpack_require__(5),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -24514,12 +24546,10 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 78 */,
-/* 79 */,
-/* 80 */
+/* 78 */
 /***/ (function(module, exports) {
 
-module.exports = [{"name":"OptimalVibes","github":"https://github.com/dth26/OptimalVibes.git","desc":"Audio track ripper and downloader","tools":["Python","ReactJS","Webpack","Bootstrap"],"image":"OptimalVibes1.png"},{"name":"Personal Website","github":"https://github.com/dth26/OptimalVibes.git","desc":"I built a customized personal website for a friend","tools":["Python","Flask"],"image":"optimalVibes1"},{"name":"Personal Website","github":"https://github.com/dth26/OptimalVibes.git","desc":"I built a customized personal website for a friend","tools":["Python","Flask"],"image":"optimalVibes1"}]
+module.exports = [{"name":"OptimalVibes","modalID":"optimalvibes","github":"https://github.com/dth26/OptimalVibes","desc":"Audio track ripper and downloader","tools":["Python","ReactJS","Webpack","Bootstrap 3"],"image":"OptimalVibes1.png"},{"name":"On-call SA Zabbix Alert","modalID":"zabbixsa","github":"https://github.com/dth26/Zabbix-Admin-Alerts","desc":"One of my job responsibilities is going on-call to monitor our dev and prod servers. Alerts are sent via email and sometimes I miss email notifications. I built an android app to monitor alerts sent to my email. When the alert is received an alarm triggers which needs to be manually stopped.","tools":["Android Studio","Gradle","Java"],"image":"on-call2.jpg"},{"name":"SalaryMap","modalID":"salarymap","github":"https://github.com/dth26/SalaryMap","desc":"I thought it'd be cool to scrape data from glassdoor and integrate that with google maps api to show a map with the top places to work in selected cities.","tools":["Google Maps API","Angular 1.4","Python","Webapp2"],"image":"salarymap.png"}]
 
 /***/ })
 /******/ ]);

@@ -3,7 +3,7 @@ var path = require('path');
 
 var BUILD_DIR = path.resolve(__dirname, 'public/js');
 var SRC_DIR = path.resolve(__dirname, 'src/js');
-vaar DATA_DIR = path.resolve(__dirname, 'public/data');
+//var DATA_DIR = path.resolve(__dirname, 'public/data');
 
 var config = {
 	entry: { 
@@ -17,7 +17,7 @@ var config = {
 	    loaders : [
 	      {
 	        test : /\.jsx?/,
-	        include : [SRC_DIR, DATA_DIR],
+	        include : [SRC_DIR],
 	        loaders: ['react-hot-loader/webpack', 'babel-loader']
 	      }
 	    ]
