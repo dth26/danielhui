@@ -63,6 +63,10 @@
 .shrink {
   height: 50px; }
 
+@media (min-width: 1200px) {
+  .body-container {
+    width: 900px; } }
+
 .navbar-body {
   background-color: white;
   padding: 0px;
@@ -71,7 +75,9 @@
 
 .body-container {
   padding-top: 100px;
-  position: absolute; }
+  position: absolute;
+  padding-left: 0px;
+  padding-right: 0px; }
   .body-container p {
     font-size: 10px; }
 
@@ -84,6 +90,12 @@
 
 .modal-img {
   width: 100%; }
+
+.modal-footer-mods {
+  background-color: #ededed; }
+
+.project-col {
+  padding: 0px; }
 
 .project-card {
   overflow: hidden;
@@ -102,6 +114,15 @@
       color: black; }
     .project-card .card-block .fa-text {
       color: #0a3a82; }
+  .project-card .card-text {
+    text-align: left; }
+  .project-card .card-footer {
+    height: auto;
+    padding: 5px;
+    background-color: #ededed;
+    margin: 0px; }
+  .project-card .card-tags {
+    margin-bottom: 0px; }
   .project-card .card-header {
     background-color: #3a4a54;
     padding: 6px;
@@ -114,13 +135,9 @@
     display: inline-block;
     padding: 4px 3px;
     background-color: white;
-    color: black;
-    border-width: 1px 1px 2px 1px;
-    border-style: solid;
-    border-color: #222;
-    border-color: #1c1c1c;
-    border-radius: 3px;
-    margin: 3px;
+    color: #424242;
+    font-weight: 800;
+    margin: 1px;
     margin-left: 6px;
     opacity: 1;
     cursor: pointer;

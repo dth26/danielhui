@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Project from './project.jsx';
+import Skill from './skill.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -25,13 +26,12 @@ export default class Body extends React.Component {
 	render () {
 		return (
 
-			<div className="container-fluid body-container">
-				<Route exact path="/" component={Project}/>
-				<Route path="/projects" component={Project}/>
-				<Route path="/about" component={Project}/>
-				<Route path="/resume" component={Project}/>
-				<Route path="/skills" component={Project}/>
+			<div className="container-fluid body-container center-content-h ">
+				<Project/>
+				<Skill/>
 			</div>
+
+		
 
 		);
 	}
